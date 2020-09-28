@@ -36,7 +36,7 @@ public class PostController {
                     post.setContent(request.getContent());
 
                     return  postRepo.save(post);
-                }).orElseThrow(() -> new ResourceNotFoundException("PostId" + postId + " not found.");
+                }).orElseThrow(() -> new ResourceNotFoundException("PostId" + postId + " not found."));
     }
 
     @DeleteMapping("/{postId}")
@@ -46,6 +46,6 @@ public class PostController {
                     postRepo.delete(post);
 
                     return ResponseEntity.ok().build();
-                }).orElseThrow(() -> new ResourceNotFoundException("PostId " + postId + " not found.");
+                }).orElseThrow(() -> new ResourceNotFoundException("PostId " + postId + " not found."));
     }
 }
